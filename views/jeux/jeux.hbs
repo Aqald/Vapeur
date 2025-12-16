@@ -1,0 +1,27 @@
+<h1 class="page-title">Liste des Jeux</h1>
+
+<div class="page-actions">
+    <a href="/jeux/form" class="btn">+ Ajouter un jeu</a>
+</div>
+
+<ul>
+    {{#each jeux}}
+    <li>
+        <a href="/jeux/{{id}}">
+            <img src="{{image}}" alt="{{titre}}">
+        </a>
+        <a href="/jeux/{{id}}">
+            <h2>{{titre}}</h2>
+        </a>
+        <p>{{description}}</p>
+        <div class="card-actions">
+            <a href="/jeux/{{id}}" class="btn-view">Voir détails</a>
+            <a href="/jeux/delete/{{id}}" class="btn-delete">Supprimer</a>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+
+<div class="page-navigation">
+    <a href="/" class="btn-secondary">← Retour à l'accueil</a>
+</div>

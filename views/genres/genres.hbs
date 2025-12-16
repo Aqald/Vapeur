@@ -1,0 +1,18 @@
+<h1 class="page-title">Liste des genres</h1>
+
+
+
+<ul class="genre-list">
+    {{#each genres}}
+    <li>
+        <a href="/genres/{{nom}}" class="genre-card">
+            <h2>{{nom}}</h2>
+            <span class="arrow">→</span>
+        </a>
+    </li>
+    {{/each}}
+</ul>
+
+<div class="page-navigation">
+    <a href="/" class="btn-secondary">← Retour à l'accueil</a>
+</div>

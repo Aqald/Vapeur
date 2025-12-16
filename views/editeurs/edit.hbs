@@ -1,0 +1,12 @@
+<h1 class="page-title">Modifier un éditeur</h1>
+
+<form id="editeurs" method="post" action="/editeurs/edit/{{editeur.id}}">
+    <label for="nom">Nom de l'éditeur</label>
+    <input type="text" id="nom" name="nom" value="{{editeur.nom}}" required >
+
+    <input type="submit" value="Modifier l'éditeur">
+</form>
+
+<div class="page-navigation">
+    <a href="/editeurs" class="btn-secondary">← Retour aux éditeurs</a>
+</div>

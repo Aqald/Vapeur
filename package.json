@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@prisma/client": "6.19.0",
+    "express": "^5.2.1",
+    "hbs": "^4.2.0",
+    "nodejs": "^0.0.0",
+    "prisma": "6.19.0",
+    "sqlite3": "^5.1.7"
+  }
+}

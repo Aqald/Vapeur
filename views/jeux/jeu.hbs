@@ -1,0 +1,40 @@
+<div class="game-detail">
+    <h1 class="page-title">{{titre}}</h1>
+
+    <div class="game-content">
+        <div class="game-image">
+            <img src="{{image}}" alt="{{titre}}">
+        </div>
+
+        <div class="game-info">
+            <div class="info-section">
+                <h2>Description</h2>
+                <p>{{description}}</p>
+            </div>
+
+            <div class="info-section">
+                <h2>Date de sortie</h2>
+                <p>{{date}}</p>
+            </div>
+
+            <div class="info-section">
+                <h2>Genre</h2>
+                <a href="/genres/{{genre}}" class="info-link">{{genre}}</a>
+            </div>
+
+            <div class="info-section">
+                <h2>Éditeur</h2>
+                <a href="/editeurs/{{editeur}}" class="info-link">{{editeur}}</a>
+            </div>
+            
+            <dif class="info-section">
+                <h2>Modifier</h2>
+                <a href="/jeux/edit/{{id}}" class="btn-edit">Modifier le jeu</a>
+        </div>
+    </div>
+
+    <div class="game-actions">
+        <a href="/jeux" class="btn-secondary">← Retour à la liste des jeux</a>
+        <a href="/" class="btn-secondary">← Retour à l'accueil</a>
+    </div>
+</div>

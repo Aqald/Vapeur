@@ -1,0 +1,37 @@
+<h1>Modifier {{jeu.titre}}</h1>
+
+<form id="jeux" method="post" action="/jeux/edit/{{jeu.id}}">
+    <input type="hidden" name="id" value="{{jeu.id}}">
+    <label for="titre">Titre du jeu : </label>
+    <input type="text" id="titre" name="titre" value="{{jeu.titre}}" required><br><br>
+
+    <label for="description">Description : </label><br>
+    <textarea id="description" name="description" rows="4" cols="50" required>{{jeu.description}}</textarea><br><br>
+
+    <label for="date">Date de sortie : </label>
+    <input type="datetime-local" id="date" name="date" value="{{formatDateForInput jeu.date}}" required><br><br>
+
+    <label for="genre">Genre : </label>
+    <select id="genre" name="genre" required>
+        <option value="{{jeu.genre}}">{{jeu.genre}}</option>
+        {{#each genres}}
+            <option value="{{nom}}">{{nom}}</option>
+        {{/each}}
+    </select><br><br>
+
+    <label for="editeur">Éditeur : </label>
+    <select id="editeur" name="editeur" required>
+        <option value="{{jeu.editeur}}">{{jeu.editeur}}</option>
+        {{#each editeurs}}
+            <option value="{{nom}}">{{nom}}</option>
+        {{/each}}
+    </select><br><br>
+
+    <label for="image">URL de l'image : </label>
+    <input type="text" id="image" name="image" value="{{jeu.image}}" required><br><br>
+
+    <label for="misenavant">Mettre en avant : </label>
+    <input type="checkbox" id="misenavant" name="misenavant" value="true" {{#if jeu.misenavant}}checked{{/if}}><br><br>
+
+    <button type="submit" class="btn">Enregistrer les modifications</button>
+</form>

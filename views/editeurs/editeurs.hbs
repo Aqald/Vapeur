@@ -1,0 +1,24 @@
+<h1 class="page-title">Liste des éditeurs</h1>
+
+<div class="page-actions">
+    <a href="/editeurs/form" class="btn">+ Ajouter un éditeur</a>
+</div>
+
+<ul class="editeur-list">
+    {{#each editeurs}}
+    <li>
+        <div class="editeur-card">
+            <a href="/editeurs/{{nom}}" class="editeur-link">
+                <h2>{{nom}}</h2>
+                <span class="arrow">→</span>
+            </a>
+            <a href="/editeurs/delete/{{id}}" class="btn-delete-small">Supprimer</a>
+            <a href="/editeurs/edit/{{id}}" class="btn-edit-small">Modifier</a>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+
+<div class="page-navigation">
+    <a href="/" class="btn-secondary">← Retour à l'accueil</a>
+</div>

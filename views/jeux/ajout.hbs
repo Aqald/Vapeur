@@ -1,0 +1,49 @@
+<h1>Ajouter un nouveau jeu</h1>
+
+
+
+<form id="jeux" method="post" action="/jeux/form">
+        <label for="titre">Titre du jeu : </label>
+        <input type="text" id="titre" name="titre" required><br><br>
+
+        <label for="description">Description : </label>
+        <textarea id="description" name="description" required></textarea><br><br>
+
+        <label for="date">date de sortie : </label>
+        <input type="datetime-local" id="date" name="date" required><br><br>
+
+        <label for="genre">genre : </label>
+        <select type="text" name="genre" id="genre" required>
+        <option value="">Veuillez choisir un genre</option>
+        {{#each genres}}
+            <option value={{nom}}>{{nom}}</option>
+        {{/each}}
+        </select><br><br>
+
+        <label for="editeur">editeur : </label>
+        <select name="editeur" id="editeur" type="text">
+        <option value="aucun">aucun</option>
+        {{#each editeurs}}
+            <option value={{nom}}>{{nom}}</option>
+        {{/each}}
+        </select><br><br>
+
+        <label for="image">lien image : </label>
+        <input type="text" id="image" name="image" required><br><br>
+
+        <input type="hidden" name="misenavant" id="hiddenChecked">
+        <input type="checkbox" id="checkboxChecked" value="true">
+        le jeu est-il mis en avant ?
+
+        <input type="submit" value="Ajouter le jeu">
+</form>
+
+<script>
+  const form = document.getElementById('jeux');
+  const checkbox = document.getElementById('checkboxChecked');
+  const hidden = document.getElementById('hiddenChecked');
+
+  form.addEventListener('submit', () => {
+    hidden.value = checkbox.checked ? 'true' : 'false';
+  });
+</script>

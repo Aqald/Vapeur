@@ -1,0 +1,614 @@
+/* Style inspiré de GOG - Dark Theme avec accents violets */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --bg-card: #3a3a3a;
+    --text-primary: #ffffff;
+    --text-secondary: #b8b8b8;
+    --accent-purple: #b643cd;
+    --accent-hover: #d35ee6;
+    --border-color: #4a4a4a;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--bg-secondary);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--accent-purple);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(182, 67, 205, 0.5));
+}
+
+.site-name {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    transition: filter 0.3s ease;
+}
+
+.site-name:hover {
+    filter: drop-shadow(0 0 8px rgba(182, 67, 205, 0.8));
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Main Content */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 3rem;
+}
+
+title {
+    color: var(--text-primary);
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Titre principal de la page */
+h1.page-title {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--accent-purple), var(--accent-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(182, 67, 205, 0.3);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: var(--text-primary);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+/* Links */
+a {
+    color: var(--accent-purple);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* Navigation Links */
+header a, nav a {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+header a:hover, nav a:hover {
+    color: var(--text-primary);
+    background-color: rgba(182, 67, 205, 0.1);
+}
+
+/* Game Grid */
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 0 1.5rem;
+}
+
+ul li, ul > a, ul > div {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+ul li:hover, ul > a:hover, ul > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(182, 67, 205, 0.2);
+}
+
+/* Game Card Images */
+ul img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Game Card Content */
+ul li > *, ul > div > * {
+    padding: 0 1.5rem;
+}
+
+ul h2 {
+    padding: 1rem 1.5rem 0.5rem;
+}
+
+ul p {
+    padding: 0 1.5rem 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    overflow: visible;
+}
+
+/* Action Links */
+ul a[href*="delete"], ul a[href*="edit"] {
+    display: inline-block;
+    margin: 0 1.5rem 1rem 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(182, 67, 205, 0.1);
+    border: 1px solid var(--accent-purple);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+ul a[href*="delete"]:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+/* Page Actions */
+.page-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.page-navigation {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/* Card Actions */
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1.5rem 1rem;
+}
+
+.btn-view {
+    flex: 1;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    background-color: rgba(182, 67, 205, 0.2);
+    border: 1px solid var(--accent-purple);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: rgba(182, 67, 205, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    padding: 0.6rem 1rem;
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    color: #dc3545;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Genre List */
+.genre-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.genre-list li {
+    list-style: none;
+}
+
+.genre-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-card);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.genre-card h2 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.genre-card .arrow {
+    color: var(--accent-purple);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.genre-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(182, 67, 205, 0.3);
+}
+
+.genre-card:hover h2 {
+    color: var(--accent-purple);
+}
+
+.genre-card:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* Editeur List */
+.editeur-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.editeur-list li {
+    list-style: none;
+}
+
+.editeur-card {
+    background-color: var(--bg-card);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.editeur-card .editeur-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.editeur-card h2 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin: 0;
+    transition: color 0.3s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+}
+
+.editeur-card .arrow {
+    color: var(--accent-purple);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.editeur-card:hover {
+    border-color: var(--accent-purple);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(182, 67, 205, 0.3);
+}
+
+.editeur-card:hover h2 {
+    color: var(--accent-purple);
+}
+
+.editeur-card:hover .arrow {
+    transform: translateX(5px);
+}
+
+.btn-delete-small {
+    padding: 0.5rem 1rem;
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    color: #dc3545;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-delete-small:hover {
+    background-color: rgba(220, 53, 69, 0.2);
+    transform: scale(1.05);
+}
+
+/* Buttons & Primary Actions */
+.btn, input[type="submit"], button,
+a[href*="form"]:not(ul a),
+a[href="/jeux"],
+a[href="/editeurs"],
+a[href="/genres"] {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    margin: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-purple), #8e24aa);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(182, 67, 205, 0.3);
+}
+
+.btn:hover, input[type="submit"]:hover, button:hover,
+a[href*="form"]:not(ul a):hover {
+    background: linear-gradient(135deg, var(--accent-hover), #a832c4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(182, 67, 205, 0.4);
+}
+
+/* Forms */
+form {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem 0;
+    border: 1px solid var(--border-color);
+}
+
+label {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 2px rgba(182, 67, 205, 0.2);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    accent-color: var(--accent-purple);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    border-top: 2px solid var(--border-color);
+    margin-top: 4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    ul {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    main {
+        padding: 2rem 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    header nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Special styling for featured games page */
+body:has(h1:contains("Jeux en avant")) ul {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* Game Detail Page */
+.game-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-content {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.game-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-section h2 {
+    color: var(--accent-purple);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-section p {
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.info-link {
+    display: inline-block;
+    color: var(--text-primary);
+    background-color: var(--bg-card);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--accent-purple);
+    transition: all 0.3s ease;
+}
+
+.info-link:hover {
+    background-color: rgba(182, 67, 205, 0.2);
+    transform: translateX(5px);
+}
+
+.game-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--accent-purple);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .game-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
